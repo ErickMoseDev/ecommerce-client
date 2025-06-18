@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router';
+import { NavLink, useNavigate } from 'react-router';
 import Logo from '../components/logo';
 
 const navItems = [
@@ -14,8 +14,10 @@ const navItems = [
 ];
 
 export default function Navbar() {
+	const navigate = useNavigate();
+
 	return (
-		<header className="w-full h-fit border-b py-4">
+		<header className="w-full h-fit border-b border-slate-200 py-4">
 			<nav className="flex items-center justify-between mx-auto max-w-6xl">
 				<Logo link={'/'} />
 				<div className="flex gap-5">
@@ -32,8 +34,11 @@ export default function Navbar() {
 					))}
 				</div>
 				<div className="">
-					<button className="bg-amber-500 px-3 py-2 rounded-xl">
-						Get started
+					<button
+						className="bg-amber-500 px-3 py-2 font-medium rounded-lg cursor-pointer"
+						onClick={() => navigate('/dashboard')}
+					>
+						Dashboard
 					</button>
 				</div>
 			</nav>
