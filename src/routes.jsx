@@ -8,6 +8,7 @@ import Orders from './pages/admin/orders';
 import Customers from './pages/admin/customers';
 import CustomerDetails from './pages/admin/customer-details';
 import AddProduct from './pages/admin/add-product';
+import ProductDetails from './pages/admin/product-details';
 
 export const myRouter = createBrowserRouter([
 	{
@@ -29,6 +30,10 @@ export const myRouter = createBrowserRouter([
 			{
 				path: '/dashboard/products/add',
 				element: <AddProduct />,
+			},
+			{
+				path: '/dashboard/products/:productId',
+				element: <ProductDetails />,
 			},
 			{
 				path: '/dashboard/customers',
