@@ -18,7 +18,7 @@ export default function AddProduct() {
 	function handleSubmit(event) {
 		event.preventDefault();
 
-		fetch('http://localhost:8000/products', {
+		fetch(`${import.meta.env.VITE_API_BASE_URL}/products`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

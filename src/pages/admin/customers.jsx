@@ -7,7 +7,7 @@ export default function Customers() {
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
-		fetch('http://localhost:8000/customers')
+		fetch(`${import.meta.env.VITE_API_BASE_URL}/customers`)
 			.then((res) => res.json())
 			.then((data) => {
 				if (!Array.isArray(data)) {

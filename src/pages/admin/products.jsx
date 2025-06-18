@@ -9,7 +9,7 @@ export default function Products() {
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
-		fetch('http://localhost:8000/products')
+		fetch(`${import.meta.env.VITE_API_BASE_URL}/products`)
 			.then((res) => res.json())
 			.then((data) => {
 				if (!Array.isArray(data)) {
